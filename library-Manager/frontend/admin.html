@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Library – Admin</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<nav id="nav"></nav>
+<main>
+  <div class="card"><h2>Add Book</h2>
+    <div class="row">
+      <input id="title" placeholder="Title"><input id="author" placeholder="Author">
+      <input id="genre" placeholder="Genre"><input id="isbn" placeholder="ISBN (optional)">
+      <input id="stock" placeholder="Stock" type="number" min="0" value="1" style="max-width:90px">
+      <button id="add">Add</button>
+    </div><div id="msg"></div>
+  </div>
+  <div class="card"><h2>Inventory</h2>
+    <table><thead><tr><th>Title</th><th>Author</th><th>Stock</th><th></th></tr></thead><tbody id="books"></tbody></table>
+  </div>
+  <div class="card"><h2>Overdue Returns</h2>
+    <table><thead><tr><th>Member</th><th>Email</th><th>Book</th><th>Due</th><th>Fine</th></tr></thead><tbody id="overdue"></tbody></table>
+  </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

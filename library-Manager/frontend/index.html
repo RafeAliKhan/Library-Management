@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Library – Login</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<div class="card auth-box">
+  <h2 id="title">Login</h2>
+  <input id="name" placeholder="Full name" style="display:none">
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button id="submit" style="width:100%">Login</button>
+  <div id="msg"></div>
+  <p><a href="#" id="toggle">Need an account? Register</a></p>
+</div>
+<script src="/js/api.js"></script>
+<script>
+let registering = false;
+const $ = (id) => document.getElementById(id);
+if (Auth.token()) location.href = "/dashboard.html";
+
+$("toggle").onclick = (e) => {
+  e.preventDefault();
+  registering = !registering;
+  $("name").style.display = registering ? "block" : "none";
+  $("title").textContent = $("submit").textContent = registering ? "Register" : "Login";
+  $("toggle").textContent = registering ? "Have an account? Login" : "Need an account? Register";
+  $("msg").textContent = "";
+};
+
+$("submit").onclick = async () => {
+  const email = $("email").value, password = $("password").value;
+  try {
+    if (registering) {
+      await api("/auth/register", "POST", { name: $("name").value, email, password });
+      $("toggle").click();
+      $("msg").className = "ok"; $("msg").textContent = "Registered! Now log in.";
+    } else {
+      Auth.save(await api("/auth/login", "POST", { email, password }));
+      location.href = "/dashboard.html";
+    }
+  } catch (err) { $("msg").className = "error"; $("msg").textContent = err.message; }
+};
+</script>
+</body>
+</html>

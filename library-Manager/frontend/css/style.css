@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; background: #f4f5f7; color: #222; }
+nav { background: #1f2a44; color: #fff; padding: 12px 24px; display: flex; gap: 16px; align-items: center; }
+nav a { color: #cfd8ff; text-decoration: none; }
+nav .spacer { flex: 1; }
+main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+.card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); margin-bottom: 20px; }
+input, select, button { padding: 8px 10px; font-size: 14px; border: 1px solid #bbb; border-radius: 4px; }
+button { background: #3b5bdb; color: #fff; border: none; cursor: pointer; }
+button.danger { background: #c92a2a; }
+button:disabled { background: #999; cursor: not-allowed; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.row input { flex: 1; min-width: 140px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #eee; }
+.error { color: #c92a2a; margin: 8px 0; }
+.ok { color: #2b8a3e; margin: 8px 0; }
+.overdue { color: #c92a2a; font-weight: 600; }
+.auth-box { max-width: 380px; margin: 80px auto; }
+.auth-box input { width: 100%; margin-bottom: 10px; }
