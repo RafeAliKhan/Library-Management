@@ -19,9 +19,3 @@ Demo logins: `admin@library.com / admin123` (librarian), `member@library.com / m
 - `backend/validation.py` – input checks
 - `backend/schema.sql` – users, books, loans tables
 - `frontend/` – login, dashboard (live search), profile, admin pages
-
-## Ideas to extend
-- Email alerts for overdue books (SendGrid / smtplib)
-- QR codes for checkout (`qrcode` lib)
-- Swap SQLite for PostgreSQL; deploy on Render/Railway (use gunicorn, set SECRET_KEY)
-- Tests with pytest, "pay fine" endpoint, pagination, book cover images
