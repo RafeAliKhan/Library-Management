@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Library – Books</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<nav id="nav"></nav>
+<main>
+  <div class="card">
+    <div class="row">
+      <input id="search" placeholder="Search title or author...">
+      <select id="genre"><option value="">All genres</option></select>
+    </div>
+    <div id="msg"></div>
+    <table><thead><tr><th>Title</th><th>Author</th><th>Genre</th><th>Stock</th><th></th></tr></thead><tbody id="books"></tbody></table>
+  </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>
