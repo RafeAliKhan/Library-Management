@@ -1,17 +1,7 @@
 # Library Management App
 
 Flask + SQLite backend, vanilla HTML/CSS/JS frontend. JWT auth, bcrypt hashing, role-based access (member / librarian).
-
-## Run
-```bash
-python -m venv venv && source venv/bin/activate   # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cd backend
-python seed.py      # sample data + demo accounts
-python app.py       # http://localhost:5000
-```
-Demo logins: `admin@library.com / admin123` (librarian), `member@library.com / member123`.
-
+---
 ## Structure
 - `backend/app.py` – app entry, serves the frontend
 - `backend/routes/` – auth, books (CRUD), loans (borrow/return/fines/overdue)
